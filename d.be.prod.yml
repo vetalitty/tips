@@ -1,0 +1,31 @@
+version: '3.5'
+
+networks:
+  default:
+    external:
+      name: monitoring.network
+  db.network:
+     external: true
+     name: db.network
+
+services:
+  be.production.1:
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    container_name: be.production.1
+    ports:
+      - '3011:3001'
+    networks:
+      - default
+      - db.network
+  be.production.2:
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    container_name: be.production.2
+    ports:
+      - '3012:3001'
+    networks:
+      - default
+      - db.network

@@ -1,0 +1,4182 @@
+{
+	"info": {
+		"_postman_id": "30ef4157-f8e5-4c87-979f-c43eba41e420",
+		"name": "officiant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "visitor",
+			"item": [
+				{
+					"name": "register visitor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "first",
+									"description": "visitor's name",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "last",
+									"description": "visitor's lastname",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "first@mail.ru",
+									"description": "visitor's email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"description": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/visitor/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"visitor",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register visitor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"firstName\": \"first\",\n\t\"lastName\": \"last\",\n\t\"email\": \"vetalitty@gmail.com\",\n\t\"password\": \"1q\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/visitor/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"visitor",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Authorization",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "404",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 03:56:29 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"user\":{\"id\":\"56abeec9-4edd-4319-8fa3-d49c798ac382\",\"email\":\"vetalitty@gmail.com\",\"type\":\"VISITOR\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI1NmFiZWVjOS00ZWRkLTQzMTktOGZhMy1kNDljNzk4YWMzODIiLCJlbWFpbCI6InZldGFsaXR0eUBnbWFpbC5jb20iLCJ0eXBlIjoiVklTSVRPUiJ9LCJpYXQiOjE1MzQzOTE3ODksImV4cCI6MTUzNDk5NjU4OX0.nypQUwt8A1fUJ_x2KhWt-sVHtITBH_mFU6X9QfpotTE\"},\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "list of visitors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/visitor?offset=0&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"visitor"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list of visitors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/visitor?offset=0&limit=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"visitor"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "1277",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:09:00 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"visitors\":[{\"id\":\"04d110fe-3b7e-48ae-b686-6fc8f876021c\",\"firstName\":\"Ivan\",\"lastName\":\"Ivanov\",\"cardInfo\":\"00000000-0000-0000-0000-000000000000\",\"userId\":\"04d110fe-3b7e-48ae-b686-6fc8f876021c\",\"isDelete\":false,\"created_at\":\"2018-08-16T03:56:26.122Z\",\"updated_at\":\"2018-08-16T03:56:26.122Z\",\"email\":\"5@aaa.ru\",\"password\":\"$2b$10$LtQYfb5KyuW0pxoiRmLhtOf5vu4i3m7v1JdfU1A8sQM0EXO/TFJiq\",\"type\":\"VISITOR\",\"restoreToken\":null,\"expires\":null},{\"id\":\"c60d108a-7aa3-4cdf-9d45-47a9eaa2e2a1\",\"firstName\":\"Petr\",\"lastName\":\"Petrov\",\"cardInfo\":\"00000000-0000-0000-0000-000000000000\",\"userId\":\"c60d108a-7aa3-4cdf-9d45-47a9eaa2e2a1\",\"isDelete\":false,\"created_at\":\"2018-08-16T03:56:26.122Z\",\"updated_at\":\"2018-08-16T03:56:26.122Z\",\"email\":\"6@aaa.ru\",\"password\":\"$2b$10$iKs1nrkQPD3u0THPMjvf5.NAHhTsWgRi6TUk7xCaOKYyftIwZRq7.\",\"type\":\"VISITOR\",\"restoreToken\":null,\"expires\":null},{\"id\":\"56abeec9-4edd-4319-8fa3-d49c798ac382\",\"firstName\":\"first\",\"lastName\":\"last\",\"cardInfo\":null,\"userId\":\"56abeec9-4edd-4319-8fa3-d49c798ac382\",\"isDelete\":false,\"created_at\":\"2018-08-16T03:56:29.793Z\",\"updated_at\":\"2018-08-16T03:56:29.793Z\",\"email\":\"vetalitty@gmail.com\",\"password\":\"$2b$10$cF7zXkXUUUiTEz6xstjgNeSV3Rd/3NkZMDjyk7d40V0grYKZdcUrS\",\"type\":\"VISITOR\",\"restoreToken\":null,\"expires\":null}],\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "update visitor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Ivan",
+									"description": "visitor's name",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Ivanov",
+									"description": "visitor's lastname",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "5@aaa.ru",
+									"description": "visitor's email",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "{{visitorId}}",
+									"description": "visitor id which has been registred on previous step",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/visitor/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"visitor",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete visitor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/visitor/{{visitorId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"visitor",
+								"{{visitorId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "restaurant",
+			"item": [
+				{
+					"name": "register restaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "new restaurant",
+									"description": "restaurant's name",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "new address",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "restaurant@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register restaurant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"warning": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIyM2E2MWM5MS0zZmM0LTRlZjQtYjE2Mi0xZjczMDAyNzMwZDIiLCJlbWFpbCI6IjhAYS5ydSJ9LCJpYXQiOjE1MzI5MTkzMjIsImV4cCI6MTUzMzUyNDEyMn0.-WEmOtlOPSSNrQtRN-Rwf8ipHZn6Uodrm_RzLYttHug",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"new restaurant\",\n\t\"address\": \"new address\",\n\t\"email\": \"restaurant@mail.ru\",\n\t\"password\": \"1\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/users/restaurant/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"users",
+										"restaurant",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Authorization",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "33",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 30 Jul 2018 03:06:06 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "list of restaurants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant?offset=0&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list of restaurants",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/restaurant?offset=0&limit=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"restaurant"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "271",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:08:32 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"restaurants\":[{\"name\":\"restaurant 1\",\"address\":\"lenin st. 5, 1241234\",\"id\":\"a176fac7-7e8c-40f7-bbbe-287c15757dac\",\"email\":\"1@aaa.ru\"},{\"name\":\"restaurant 2\",\"address\":\"Pushkin st. 1, 1241234\",\"id\":\"0f923dcc-fd80-4dab-8d06-baf97ab1311f\",\"email\":\"2@aaa.ru\"}],\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "delete restaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant/{{restaurantId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"{{restaurantId}}"
+							]
+						},
+						"description": "also will be deleted linked waiters"
+					},
+					"response": [
+						{
+							"name": "delete restaurant",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiJlYTg3YWVhOS0zOGU3LTQ0MjctYmY1NS05ZTA4NDFjODRjMzciLCJlbWFpbCI6IjhAYS5ydSJ9LCJpYXQiOjE1MzM0Njc1NzcsImV4cCI6MTUzNDA3MjM3N30.zDvIxBnXvlGeCQtMRsjZlh_o9B-vVuLwOaITZclWLRg",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/restaurant/3040ef96-f8d6-4972-bfcf-576c76ff2119",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"restaurant",
+										"3040ef96-f8d6-4972-bfcf-576c76ff2119"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Authorization",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "33",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 06 Aug 2018 02:21:23 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "update restaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "updated new restaurant",
+									"description": "new name for the restaurant",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "{{restaurantId}}",
+									"description": "restaurant id which has been registred on previous step",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update restaurant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiJlYTg3YWVhOS0zOGU3LTQ0MjctYmY1NS05ZTA4NDFjODRjMzciLCJlbWFpbCI6IjhAYS5ydSJ9LCJpYXQiOjE1MzM0Njc1NzcsImV4cCI6MTUzNDA3MjM3N30.zDvIxBnXvlGeCQtMRsjZlh_o9B-vVuLwOaITZclWLRg",
+										"warning": ""
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"userId\": \"3040ef96-f8d6-4972-bfcf-576c76ff2119\",\n\t\"name\": \"very beautiful name\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/restaurant/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"restaurant",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Authorization",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "33",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 06 Aug 2018 03:15:02 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "restaurantTicket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Sushi-studio",
+									"description": "restaurant's name",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+79991234567",
+									"description": "contact phone",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "I want to connect to your tips system",
+									"description": "just comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant/ticket",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"ticket"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "restaurantTicket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Hello World\",\n\t\"phone\": \"+7999444432\",\n\t\"comment\": \"my second query\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/restaurantTicket",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"restaurantTicket"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Authorization",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "33",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 30 Jul 2018 03:18:55 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "get link for registration waiter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{restaurantToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant/regtoken",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"regtoken"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get link for registration waiter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{restaurantToken}}",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/restaurant/waiter_link",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"restaurant",
+										"waiter_link"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "95",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:07:29 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"link\":\"http://url.com/registerWaiter?token=fde6bfee-51e2-4cf6-aa7f-afa1a028bd08\",\"code\":\"OK\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "waiter",
+			"item": [
+				{
+					"name": "register waiter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "test@email.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								},
+								{
+									"key": "restaurantId",
+									"value": "{{restaurantId}}",
+									"description": "restaurant id which exists in the system",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Sashka",
+									"description": "waiter's name",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Cheburashkovna",
+									"description": "waiter's lastname",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/waiter/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"waiter",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register waiter",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"password\": \"1\",\n\t\"email\": \"test@email.ru\",\n\t\"restaurantId\": \"5cb1e15f-192a-43bb-ad3e-803d4329b521\",\n\t\"lastName\": \"last\",\n\t\"firstName\": \"first\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/users/waiter/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"users",
+										"waiter",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Authorization",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "33",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 30 Jul 2018 05:56:00 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "list of waiter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/waiter?offset=0&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"waiter"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list of waiter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/waiter?offset=0&limit=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"waiter"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "335",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:10:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"waiters\":[{\"firstName\":\"Ivan\",\"lastName\":\"Ivanov\",\"id\":\"469a9d26-2827-4e1b-abdc-d9bac3fab50c\",\"email\":\"3@aaa.ru\",\"isCardBind\":false,\"restaurantName\":\"restaurant 1\"},{\"firstName\":\"Petr\",\"lastName\":\"Petrov\",\"id\":\"e1cfc87f-59a4-4ca4-9a6c-487dbbcb9d33\",\"email\":\"4@aaa.ru\",\"isCardBind\":false,\"restaurantName\":\"restaurant 2\"}],\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "update waiter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userId",
+									"value": "{{waiterId}}",
+									"description": "waiter's id which has been registred on previous step",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Angelina",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Pavlova",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/waiter/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"waiter",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete waiter",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/waiter/{{waiterId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"waiter",
+								"{{waiterId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "5@aaa.ru",
+									"description": "user's email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1q",
+									"description": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "any user"
+					},
+					"response": [
+						{
+							"name": "login user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"5@aaa.ru\",\n\t\"password\": \"1q\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/users/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Authorization",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "490",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:03:33 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"user\":{\"id\":\"04d110fe-3b7e-48ae-b686-6fc8f876021c\",\"email\":\"5@aaa.ru\",\"isDelete\":false,\"type\":\"VISITOR\",\"restoreToken\":null,\"expires\":null,\"created_at\":\"2018-08-16T03:56:26.122Z\",\"updated_at\":\"2018-08-16T03:56:26.122Z\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIwNGQxMTBmZS0zYjdlLTQ4YWUtYjY4Ni02ZmM4Zjg3NjAyMWMiLCJlbWFpbCI6IjVAYWFhLnJ1IiwidHlwZSI6IlZJU0lUT1IifSwiaWF0IjoxNTM0MzkyMjEzLCJleHAiOjE1MzQ5OTcwMTN9.EEe0gc2SqjIfdPmRS-DFnyetazCGk1wMaiT78RSRlZc\"},\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "get restaurants + waiters with cards",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant/list/payment_verified",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"list",
+								"payment_verified"
+							]
+						},
+						"description": "list of restaurants and waiters which have payment card"
+					},
+					"response": [
+						{
+							"name": "get restaurants + waiters with cards",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{visitorToken}}",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/restaurant/list/payment_verified",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"restaurant",
+										"list",
+										"payment_verified"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "158",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:14:16 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"list\":{\"restaurant 1\":[{\"firstName\":\"Ivan\",\"lastName\":\"Ivanov\"}],\"restaurant 2\":[{\"firstName\":\"Petr\",\"lastName\":\"Petrov\"}]},\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "restore password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "vetalitty@gmail.com",
+									"description": "user's email, must be registred in the system",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/users/password/restore",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"password",
+								"restore"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "restore password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"vetalitty@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/users/password/restore",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"password",
+										"restore"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Authorization",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "33",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:11:28 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "user info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/users/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"warning": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "{{visitorToken}}",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/users/info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"info"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "97",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:13:09 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"info\":{\"email\":\"5@aaa.ru\",\"firstName\":\"Ivan\",\"lastName\":\"Ivanov\",\"type\":\"VISITOR\"},\"code\":\"OK\"}"
+						},
+						{
+							"name": "user info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"warning": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI2MWY4NzY1NS03YjQ1LTQ0NzktYmRjMS04ZDYwZWU3MzliYWIiLCJlbWFpbCI6IjFAYS5ydSJ9LCJpYXQiOjE1MzM1NTY3ODAsImV4cCI6MTUzNDE2MTU4MH0.Zuk43anFfW8PXJgAMcUcmy5NLAU21gUJceMarv3KHU4",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/user/info",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"user",
+										"info"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "114",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 06 Aug 2018 12:01:20 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"info\":{\"email\":\"1@a.ru\",\"name\":\"restaurant 1\",\"address\":\"lenin st. 5, 1241234\",\"type\":\"RESTAURANT\"},\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{restoreToken}}",
+									"description": "you can see that in your email after step \"restore password\"",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "{{password}}",
+									"description": "any new password which will be validated by server",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/users/password/change",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"password",
+								"change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rating",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{restaurantToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "{{waiterToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/users/rating",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"rating"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tips",
+			"item": [
+				{
+					"name": "list of tips",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "{{waiterToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "{{restaurantToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/tips",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list of tips WAITER",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "{{waiterToken}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{restaurantToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/tips?waiter={{waiterId}}&dateStart=2012-12-01T00:00:00Z&dateEnd=2023-12-01T00:00:00Z",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips"
+							],
+							"query": [
+								{
+									"key": "waiter",
+									"value": "{{waiterId}}"
+								},
+								{
+									"key": "dateStart",
+									"value": "2012-12-01T00:00:00Z"
+								},
+								{
+									"key": "dateEnd",
+									"value": "2023-12-01T00:00:00Z"
+								}
+							]
+						},
+						"description": "param waiter=123 is mandatory only for ADMIN.\nTypical waiter can be send request without this param"
+					},
+					"response": []
+				},
+				{
+					"name": "sum of tips",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "{{waiterToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "{{restaurantToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/tips/sum",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips",
+								"sum"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sum of tips",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{visitorToken}}",
+										"warning": "",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "{{waiterToken}}",
+										"warning": "",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "{{restaurantToken}}",
+										"warning": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/tips/sum",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tips",
+										"sum"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "45",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 16 Aug 2018 04:16:57 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								}
+							],
+							"cookie": [],
+							"body": "{\"sum\":200.5,\"message\":\"success\",\"code\":\"OK\"}"
+						}
+					]
+				},
+				{
+					"name": "send tips to waiter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "price",
+									"value": "132",
+									"description": "amount of tips",
+									"type": "text"
+								},
+								{
+									"key": "waiterId",
+									"value": "{{waiterId}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/tips/payment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "saveCardToken",
+									"value": "{{saveCardToken}}",
+									"description": "token which has been received on step \"send tips to waiter\"",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "so bad waiter",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "3",
+									"description": "numbers",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/tips/review",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips",
+								"review"
+							]
+						},
+						"description": "available after check and pay request from cloudPayments"
+					},
+					"response": []
+				},
+				{
+					"name": "recurring payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiJjMDUyODMxMy01NTc3LTQwZTYtYTlkZS1jODk3OWE3Yzg1YjkiLCJlbWFpbCI6InZldGFsaXR0eUBnbWFpbC5jb20iLCJ0eXBlIjoiVklTSVRPUiJ9LCJpYXQiOjE1NDIwMDM3OTIsImV4cCI6MTU0MjYwODU5Mn0._0tOiEBnQtq90nN3DgqzJPobWflHOaIjtNQi2XbrO4o"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Token",
+									"value": "{{cloudPaymentsToken}}",
+									"description": "Token from CloudPayments. You can take it after step pay in response",
+									"type": "text"
+								},
+								{
+									"key": "Amount",
+									"value": "100.00",
+									"description": "amount of tips. float",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/tips/payment/recurring",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips",
+								"payment",
+								"recurring"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transfer money to waiter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "waiterId",
+									"value": "1e9d59ba-b601-4af7-b5c0-a7254add9862",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/tips/finalize?dateStart=2000-01-01T00:00:00Z&dateEnd=2020-01-01T00:00:00Z",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips",
+								"finalize"
+							],
+							"query": [
+								{
+									"key": "dateStart",
+									"value": "2000-01-01T00:00:00Z"
+								},
+								{
+									"key": "dateEnd",
+									"value": "2020-01-01T00:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "unauth user",
+			"item": [
+				{
+					"name": "send tips as NEW GUEST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "guest[firstName]",
+									"value": "Kostik",
+									"description": "guest's name",
+									"type": "text"
+								},
+								{
+									"key": "guest[lastName]",
+									"value": "Emelyanov",
+									"description": "guest's lastname",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "111",
+									"description": "amount of tips",
+									"type": "text"
+								},
+								{
+									"key": "waiterId",
+									"value": "{{waiterId}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/tips/payment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send tips as existing GUEST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "guest",
+								"value": "{{existingGuestId}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "price",
+									"value": "222",
+									"description": "amount of tips",
+									"type": "text"
+								},
+								{
+									"key": "waiterId",
+									"value": "{{waiterId}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/tips/payment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register existing GUEST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "guest",
+								"value": "{{existingGuestId}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "guest@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Boris",
+									"description": "if needs",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Golubev",
+									"description": "if needs",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/guest/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"guest",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user info as GUEST",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "guest",
+								"value": "{{existingGuestId}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/users/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "refund money",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "saveCardToken",
+									"value": "{{saveCardToken}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/card/refund",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"card",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a new card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/card/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"card",
+								"add"
+							]
+						},
+						"description": "used for initializing action 'add card' on backend. No need to add some parameters. They are must be putting into the client widget"
+					},
+					"response": []
+				},
+				{
+					"name": "remove card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cardId",
+									"value": "{{cardId}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/card/remove",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"card",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recurring payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{visitorToken}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{recurringToken}}",
+									"description": "like \"477BBA133C182267FE5F086924ABDC5DB71F77BFC27F01F2843F2CDC69D89F05\". Will be validated",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "333",
+									"description": "amount of tips",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/tips/payment/recurring",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tips",
+								"payment",
+								"recurring"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Emulate CloudPayments",
+			"item": [
+				{
+					"name": "flow",
+					"item": [
+						{
+							"name": "payment",
+							"item": [
+								{
+									"name": "as visitor",
+									"item": [
+										{
+											"name": "1.Init payment",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{visitorToken}}"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "price",
+															"value": "132",
+															"description": "amount of tips",
+															"type": "text"
+														},
+														{
+															"key": "waiterId",
+															"value": "{{waiterId}}",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/tips/payment",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"tips",
+														"payment"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "2.send check request",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "TransactionId",
+															"value": "82288524",
+															"type": "text"
+														},
+														{
+															"key": "Amount",
+															"value": "111.00",
+															"type": "text"
+														},
+														{
+															"key": "Currency",
+															"value": "RUB",
+															"type": "text"
+														},
+														{
+															"key": "PaymentAmount",
+															"value": "111.00",
+															"type": "text"
+														},
+														{
+															"key": "PaymentCurrency",
+															"value": "RUB",
+															"type": "text"
+														},
+														{
+															"key": "OperationType",
+															"value": "Payment",
+															"type": "text"
+														},
+														{
+															"key": "InvoiceId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "AccountId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "SubscriptionId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "Name",
+															"value": "ADFAF",
+															"type": "text"
+														},
+														{
+															"key": "Email",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "DateTime",
+															"value": "2018-10-29 03:47:15",
+															"type": "text"
+														},
+														{
+															"key": "IpAddress",
+															"value": "31.44.247.3",
+															"type": "text"
+														},
+														{
+															"key": "IpCountry",
+															"value": "RU",
+															"type": "text"
+														},
+														{
+															"key": "IpCity",
+															"value": "Иркутск",
+															"type": "text"
+														},
+														{
+															"key": "IpRegion",
+															"value": "Иркутская область",
+															"type": "text"
+														},
+														{
+															"key": "IpDistrict",
+															"value": "Сибирский федеральный округ",
+															"type": "text"
+														},
+														{
+															"key": "IpLatitude",
+															"value": "52.272687",
+															"type": "text"
+														},
+														{
+															"key": "IpLongitude",
+															"value": "104.28975",
+															"type": "text"
+														},
+														{
+															"key": "CardFirstSix",
+															"value": "424242",
+															"type": "text"
+														},
+														{
+															"key": "CardLastFour",
+															"value": "4242",
+															"type": "text"
+														},
+														{
+															"key": "CardType",
+															"value": "Visa",
+															"type": "text"
+														},
+														{
+															"key": "CardExpDate",
+															"value": "12/22",
+															"type": "text"
+														},
+														{
+															"key": "Issuer",
+															"value": "Stripe Payments Uk Limited",
+															"type": "text"
+														},
+														{
+															"key": "IssuerBankCountry",
+															"value": "GB",
+															"type": "text"
+														},
+														{
+															"key": "Description",
+															"value": "Чаевые для Ivan Ivanov",
+															"type": "text"
+														},
+														{
+															"key": "TestMode",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "Status",
+															"value": "Completed",
+															"type": "text"
+														},
+														{
+															"key": "GatewayName",
+															"value": "Test",
+															"type": "text"
+														},
+														{
+															"key": "Data[JWT]",
+															"value": "{{visitorToken}}",
+															"type": "text"
+														},
+														{
+															"key": "Data[saveCardToken]",
+															"value": "{{visitorPayment_saveCardToken}}",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/checkout/check",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"checkout",
+														"check"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "3.send pay request",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "TransactionId",
+															"value": "82288524",
+															"type": "text"
+														},
+														{
+															"key": "Amount",
+															"value": "111.00",
+															"type": "text"
+														},
+														{
+															"key": "Currency",
+															"value": "RUB",
+															"type": "text"
+														},
+														{
+															"key": "PaymentAmount",
+															"value": "111.00",
+															"type": "text"
+														},
+														{
+															"key": "PaymentCurrency",
+															"value": "RUB",
+															"type": "text"
+														},
+														{
+															"key": "OperationType",
+															"value": "Payment",
+															"type": "text"
+														},
+														{
+															"key": "InvoiceId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "AccountId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "SubscriptionId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "Name",
+															"value": "ADFAF",
+															"type": "text"
+														},
+														{
+															"key": "Email",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "DateTime",
+															"value": "2018-10-29 03:47:15",
+															"type": "text"
+														},
+														{
+															"key": "IpAddress",
+															"value": "31.44.247.3",
+															"type": "text"
+														},
+														{
+															"key": "IpCountry",
+															"value": "RU",
+															"type": "text"
+														},
+														{
+															"key": "IpCity",
+															"value": "Иркутск",
+															"type": "text"
+														},
+														{
+															"key": "IpRegion",
+															"value": "Иркутская область",
+															"type": "text"
+														},
+														{
+															"key": "IpDistrict",
+															"value": "Сибирский федеральный округ",
+															"type": "text"
+														},
+														{
+															"key": "IpLatitude",
+															"value": "52.272687",
+															"type": "text"
+														},
+														{
+															"key": "IpLongitude",
+															"value": "104.28975",
+															"type": "text"
+														},
+														{
+															"key": "CardFirstSix",
+															"value": "424242",
+															"type": "text"
+														},
+														{
+															"key": "CardLastFour",
+															"value": "4242",
+															"type": "text"
+														},
+														{
+															"key": "CardType",
+															"value": "Visa",
+															"type": "text"
+														},
+														{
+															"key": "CardExpDate",
+															"value": "12/22",
+															"type": "text"
+														},
+														{
+															"key": "Issuer",
+															"value": "Stripe Payments Uk Limited",
+															"type": "text"
+														},
+														{
+															"key": "IssuerBankCountry",
+															"value": "GB",
+															"type": "text"
+														},
+														{
+															"key": "Description",
+															"value": "Чаевые для Ivan Ivanov",
+															"type": "text"
+														},
+														{
+															"key": "AuthCode",
+															"value": "A1B2C3",
+															"type": "text"
+														},
+														{
+															"key": "Token",
+															"value": "477BBA133C182267FE5F086924ABDC5DB71F77BFC27F01F2843F2CDC69D89F05",
+															"type": "text"
+														},
+														{
+															"key": "TestMode",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "Status",
+															"value": "Completed",
+															"type": "text"
+														},
+														{
+															"key": "GatewayName",
+															"value": "Test",
+															"type": "text"
+														},
+														{
+															"key": "Data[JWT]",
+															"value": "{{visitorToken}}",
+															"type": "text"
+														},
+														{
+															"key": "Data[saveCardToken]",
+															"value": "{{visitorPayment_saveCardToken}}",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/checkout/pay",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"checkout",
+														"pay"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "4.send review if needs",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{visitorToken}}"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "saveCardToken",
+															"value": "{{visitorPayment_saveCardToken}}",
+															"description": "token which has been received on step \"send tips to waiter\"",
+															"type": "text"
+														},
+														{
+															"key": "message",
+															"value": "so bad waiter",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "3",
+															"description": "numbers",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/tips/review",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"tips",
+														"review"
+													]
+												},
+												"description": "available after check and pay request from cloudPayments"
+											},
+											"response": []
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "as guest",
+									"item": [
+										{
+											"name": "1.Init payment",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "guest[firstName]",
+															"value": "Kostik",
+															"description": "guest's name",
+															"type": "text"
+														},
+														{
+															"key": "guest[lastName]",
+															"value": "Emelyanov",
+															"description": "guest's lastname",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "111",
+															"description": "amount of tips",
+															"type": "text"
+														},
+														{
+															"key": "waiterId",
+															"value": "{{waiterId}}",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/tips/payment",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"tips",
+														"payment"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "2.send check request",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "TransactionId",
+															"value": "82288524",
+															"type": "text"
+														},
+														{
+															"key": "Amount",
+															"value": "111.00",
+															"type": "text"
+														},
+														{
+															"key": "Currency",
+															"value": "RUB",
+															"type": "text"
+														},
+														{
+															"key": "PaymentAmount",
+															"value": "111.00",
+															"type": "text"
+														},
+														{
+															"key": "PaymentCurrency",
+															"value": "RUB",
+															"type": "text"
+														},
+														{
+															"key": "OperationType",
+															"value": "Payment",
+															"type": "text"
+														},
+														{
+															"key": "InvoiceId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "AccountId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "SubscriptionId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "Name",
+															"value": "ADFAF",
+															"type": "text"
+														},
+														{
+															"key": "Email",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "DateTime",
+															"value": "2018-10-29 03:47:15",
+															"type": "text"
+														},
+														{
+															"key": "IpAddress",
+															"value": "31.44.247.3",
+															"type": "text"
+														},
+														{
+															"key": "IpCountry",
+															"value": "RU",
+															"type": "text"
+														},
+														{
+															"key": "IpCity",
+															"value": "Иркутск",
+															"type": "text"
+														},
+														{
+															"key": "IpRegion",
+															"value": "Иркутская область",
+															"type": "text"
+														},
+														{
+															"key": "IpDistrict",
+															"value": "Сибирский федеральный округ",
+															"type": "text"
+														},
+														{
+															"key": "IpLatitude",
+															"value": "52.272687",
+															"type": "text"
+														},
+														{
+															"key": "IpLongitude",
+															"value": "104.28975",
+															"type": "text"
+														},
+														{
+															"key": "CardFirstSix",
+															"value": "424242",
+															"type": "text"
+														},
+														{
+															"key": "CardLastFour",
+															"value": "4242",
+															"type": "text"
+														},
+														{
+															"key": "CardType",
+															"value": "Visa",
+															"type": "text"
+														},
+														{
+															"key": "CardExpDate",
+															"value": "12/22",
+															"type": "text"
+														},
+														{
+															"key": "Issuer",
+															"value": "Stripe Payments Uk Limited",
+															"type": "text"
+														},
+														{
+															"key": "IssuerBankCountry",
+															"value": "GB",
+															"type": "text"
+														},
+														{
+															"key": "Description",
+															"value": "Чаевые для Ivan Ivanov",
+															"type": "text"
+														},
+														{
+															"key": "TestMode",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "Status",
+															"value": "Completed",
+															"type": "text"
+														},
+														{
+															"key": "GatewayName",
+															"value": "Test",
+															"type": "text"
+														},
+														{
+															"key": "Data[guest]",
+															"value": "{{existingGuestId}}",
+															"type": "text"
+														},
+														{
+															"key": "Data[saveCardToken]",
+															"value": "{{guestPayment_saveCardToken}}",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/checkout/check",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"checkout",
+														"check"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "3.send pay request",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "TransactionId",
+															"value": "82288524",
+															"type": "text"
+														},
+														{
+															"key": "Amount",
+															"value": "111.00",
+															"type": "text"
+														},
+														{
+															"key": "Currency",
+															"value": "RUB",
+															"type": "text"
+														},
+														{
+															"key": "PaymentAmount",
+															"value": "111.00",
+															"type": "text"
+														},
+														{
+															"key": "PaymentCurrency",
+															"value": "RUB",
+															"type": "text"
+														},
+														{
+															"key": "OperationType",
+															"value": "Payment",
+															"type": "text"
+														},
+														{
+															"key": "InvoiceId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "AccountId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "SubscriptionId",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "Name",
+															"value": "ADFAF",
+															"type": "text"
+														},
+														{
+															"key": "Email",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "DateTime",
+															"value": "2018-10-29 03:47:15",
+															"type": "text"
+														},
+														{
+															"key": "IpAddress",
+															"value": "31.44.247.3",
+															"type": "text"
+														},
+														{
+															"key": "IpCountry",
+															"value": "RU",
+															"type": "text"
+														},
+														{
+															"key": "IpCity",
+															"value": "Иркутск",
+															"type": "text"
+														},
+														{
+															"key": "IpRegion",
+															"value": "Иркутская область",
+															"type": "text"
+														},
+														{
+															"key": "IpDistrict",
+															"value": "Сибирский федеральный округ",
+															"type": "text"
+														},
+														{
+															"key": "IpLatitude",
+															"value": "52.272687",
+															"type": "text"
+														},
+														{
+															"key": "IpLongitude",
+															"value": "104.28975",
+															"type": "text"
+														},
+														{
+															"key": "CardFirstSix",
+															"value": "424242",
+															"type": "text"
+														},
+														{
+															"key": "CardLastFour",
+															"value": "4242",
+															"type": "text"
+														},
+														{
+															"key": "CardType",
+															"value": "Visa",
+															"type": "text"
+														},
+														{
+															"key": "CardExpDate",
+															"value": "12/22",
+															"type": "text"
+														},
+														{
+															"key": "Issuer",
+															"value": "Stripe Payments Uk Limited",
+															"type": "text"
+														},
+														{
+															"key": "IssuerBankCountry",
+															"value": "GB",
+															"type": "text"
+														},
+														{
+															"key": "Description",
+															"value": "Чаевые для Ivan Ivanov",
+															"type": "text"
+														},
+														{
+															"key": "AuthCode",
+															"value": "A1B2C3",
+															"type": "text"
+														},
+														{
+															"key": "Token",
+															"value": "477BBA133C182267FE5F086924ABDC5DB71F77BFC27F01F2843F2CDC69D89F05",
+															"type": "text"
+														},
+														{
+															"key": "TestMode",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "Status",
+															"value": "Completed",
+															"type": "text"
+														},
+														{
+															"key": "GatewayName",
+															"value": "Test",
+															"type": "text"
+														},
+														{
+															"key": "Data[guest]",
+															"value": "{{existingGuestId}}",
+															"type": "text"
+														},
+														{
+															"key": "Data[saveCardToken]",
+															"value": "{{guestPayment_saveCardToken}}",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/checkout/pay",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"checkout",
+														"pay"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "4.send review if needs",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{visitorToken}}"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "saveCardToken",
+															"value": "{{guestPayment_saveCardToken}}",
+															"description": "token which has been received on step \"send tips to waiter\"",
+															"type": "text"
+														},
+														{
+															"key": "message",
+															"value": "so bad waiter",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "3",
+															"description": "numbers",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/tips/review",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"tips",
+														"review"
+													]
+												},
+												"description": "available after check and pay request from cloudPayments"
+											},
+											"response": []
+										}
+									],
+									"_postman_isSubFolder": true
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "refund",
+							"item": [
+								{
+									"name": "refund money copy",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{visitorToken}}"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "saveCardToken",
+													"value": "{{visitorPayment_saveCardToken}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/card/refund",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"card",
+												"refund"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "check",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "TransactionId",
+									"value": "82288524",
+									"type": "text"
+								},
+								{
+									"key": "Amount",
+									"value": "111.00",
+									"type": "text"
+								},
+								{
+									"key": "Currency",
+									"value": "RUB",
+									"type": "text"
+								},
+								{
+									"key": "PaymentAmount",
+									"value": "111.00",
+									"type": "text"
+								},
+								{
+									"key": "PaymentCurrency",
+									"value": "RUB",
+									"type": "text"
+								},
+								{
+									"key": "OperationType",
+									"value": "Payment",
+									"type": "text"
+								},
+								{
+									"key": "InvoiceId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "AccountId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "SubscriptionId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Name",
+									"value": "ADFAF",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "DateTime",
+									"value": "2018-10-29 03:47:15",
+									"type": "text"
+								},
+								{
+									"key": "IpAddress",
+									"value": "31.44.247.3",
+									"type": "text"
+								},
+								{
+									"key": "IpCountry",
+									"value": "RU",
+									"type": "text"
+								},
+								{
+									"key": "IpCity",
+									"value": "Иркутск",
+									"type": "text"
+								},
+								{
+									"key": "IpRegion",
+									"value": "Иркутская область",
+									"type": "text"
+								},
+								{
+									"key": "IpDistrict",
+									"value": "Сибирский федеральный округ",
+									"type": "text"
+								},
+								{
+									"key": "IpLatitude",
+									"value": "52.272687",
+									"type": "text"
+								},
+								{
+									"key": "IpLongitude",
+									"value": "104.28975",
+									"type": "text"
+								},
+								{
+									"key": "CardFirstSix",
+									"value": "424242",
+									"type": "text"
+								},
+								{
+									"key": "CardLastFour",
+									"value": "4242",
+									"type": "text"
+								},
+								{
+									"key": "CardType",
+									"value": "Visa",
+									"type": "text"
+								},
+								{
+									"key": "CardExpDate",
+									"value": "12/22",
+									"type": "text"
+								},
+								{
+									"key": "Issuer",
+									"value": "Stripe Payments Uk Limited",
+									"type": "text"
+								},
+								{
+									"key": "IssuerBankCountry",
+									"value": "GB",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "Чаевые для Ivan Ivanov",
+									"type": "text"
+								},
+								{
+									"key": "TestMode",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "Status",
+									"value": "Completed",
+									"type": "text"
+								},
+								{
+									"key": "GatewayName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "Data[JWT]",
+									"value": "{{visitorToken}}",
+									"type": "text"
+								},
+								{
+									"key": "Data[saveCardToken]",
+									"value": "{{saveCardToken}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/checkout/check",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"checkout",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "TransactionId",
+									"value": "82288524",
+									"type": "text"
+								},
+								{
+									"key": "Amount",
+									"value": "111.00",
+									"type": "text"
+								},
+								{
+									"key": "Currency",
+									"value": "RUB",
+									"type": "text"
+								},
+								{
+									"key": "PaymentAmount",
+									"value": "111.00",
+									"type": "text"
+								},
+								{
+									"key": "PaymentCurrency",
+									"value": "RUB",
+									"type": "text"
+								},
+								{
+									"key": "OperationType",
+									"value": "Payment",
+									"type": "text"
+								},
+								{
+									"key": "InvoiceId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "AccountId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "SubscriptionId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Name",
+									"value": "ADFAF",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "DateTime",
+									"value": "2018-10-29 03:47:15",
+									"type": "text"
+								},
+								{
+									"key": "IpAddress",
+									"value": "31.44.247.3",
+									"type": "text"
+								},
+								{
+									"key": "IpCountry",
+									"value": "RU",
+									"type": "text"
+								},
+								{
+									"key": "IpCity",
+									"value": "Иркутск",
+									"type": "text"
+								},
+								{
+									"key": "IpRegion",
+									"value": "Иркутская область",
+									"type": "text"
+								},
+								{
+									"key": "IpDistrict",
+									"value": "Сибирский федеральный округ",
+									"type": "text"
+								},
+								{
+									"key": "IpLatitude",
+									"value": "52.272687",
+									"type": "text"
+								},
+								{
+									"key": "IpLongitude",
+									"value": "104.28975",
+									"type": "text"
+								},
+								{
+									"key": "CardFirstSix",
+									"value": "424242",
+									"type": "text"
+								},
+								{
+									"key": "CardLastFour",
+									"value": "4242",
+									"type": "text"
+								},
+								{
+									"key": "CardType",
+									"value": "Visa",
+									"type": "text"
+								},
+								{
+									"key": "CardExpDate",
+									"value": "12/22",
+									"type": "text"
+								},
+								{
+									"key": "Issuer",
+									"value": "Stripe Payments Uk Limited",
+									"type": "text"
+								},
+								{
+									"key": "IssuerBankCountry",
+									"value": "GB",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "Чаевые для Ivan Ivanov",
+									"type": "text"
+								},
+								{
+									"key": "AuthCode",
+									"value": "A1B2C3",
+									"type": "text"
+								},
+								{
+									"key": "Token",
+									"value": "477BBA133C182267FE5F086924ABDC5DB71F77BFC27F01F2843F2CDC69D89F05",
+									"type": "text"
+								},
+								{
+									"key": "TestMode",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "Status",
+									"value": "Completed",
+									"type": "text"
+								},
+								{
+									"key": "GatewayName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "Data[JWT]",
+									"value": "{{visitorToken}}",
+									"type": "text"
+								},
+								{
+									"key": "Data[saveCardToken]",
+									"value": "{{saveCardToken}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/checkout/pay",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"checkout",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

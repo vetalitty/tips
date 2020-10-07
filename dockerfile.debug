@@ -1,0 +1,11 @@
+FROM node:8
+
+# Create app directory
+WORKDIR /docker_images
+
+COPY package*.json ./
+COPY . .
+
+RUN yarn install
+
+CMD REMOTE_IP=$REMOTE_IP REMOTE_PORT=$REMOTE_PORT yarn debug

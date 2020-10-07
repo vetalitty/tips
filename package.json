@@ -1,0 +1,50 @@
+{
+  "name": "experiments",
+  "version": "1.0.0",
+  "description": "Backend for experiments",
+  "main": "index.js",
+  "repository": "",
+  "author": "Vitaly Kuznetsov <vetalitty@gmail.com>",
+  "license": "",
+  "scripts": {
+    "start": "node bin/server.js",
+    "debug": "node --inspect=$REMOTE_IP:$REMOTE_PORT bin/server.js",
+    "reset-db": "node bin/server.js resetDb",
+    "create-admin": "node sql/createAdmin.js",
+    "refund": "node utilities/refund.js"
+  },
+  "dependencies": {
+    "@sentry/node": "4.4.1",
+    "bcrypt": "^5.0.0",
+    "chai": "^4.1.2",
+    "dotenv": "^6.0.0",
+    "http-shutdown": "^1.2.0",
+    "is-uuid": "^1.0.2",
+    "jsonwebtoken": "^8.3.0",
+    "kcors": "^2.2.2",
+    "knex": "^0.15.2",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-jwt": "^3.3.2",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.10",
+    "log4js": "^3.0.6",
+    "mocha": "^6.2.0",
+    "nodemailer": "^4.6.7",
+    "pg": "^7.5.0",
+    "pg-extra": "^1.1.0",
+    "prom-client": "^10.2.3",
+    "prometheus-gc-stats": "^0.5.0",
+    "request-promise-any": "^1.0.5",
+    "should": "^13.2.3",
+    "uuid": "^3.3.2",
+    "validator": "^10.5.0",
+    "yup": "^0.26.0"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.0",
+    "nodemon": "^1.9.2",
+    "request": "^2.87.0"
+  }
+}

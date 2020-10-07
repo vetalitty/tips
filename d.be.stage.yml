@@ -1,0 +1,21 @@
+version: '3.5'
+
+networks:
+  default:
+    external:
+      name: monitoring.network
+  db.network:
+     external: true
+     name: db.network
+
+services:
+  be.stage:
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    container_name: be.stage
+    ports:
+      - '3011:3001'
+    networks:
+      - default
+      - db.network

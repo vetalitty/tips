@@ -1,0 +1,24 @@
+version: '3.5'
+
+networks:
+  default:
+    external:
+      name: db.network
+
+services:
+  be.debug:
+    build:
+      context: .
+      dockerfile: dockerfile.debug
+    container_name: be.debug
+
+    environment:
+      REMOTE_IP: 0.0.0.0
+      REMOTE_PORT: 9229
+    env_file:
+      - .debug.env
+    ports:
+      - '3010:3001'
+      - '9229:9229'
+    networks:
+      - default

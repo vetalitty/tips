@@ -1,0 +1,12 @@
+FROM node:8
+
+# Create app directory
+WORKDIR /docker_images
+
+COPY package*.json ./
+
+RUN yarn install
+
+COPY . .
+
+CMD [ "yarn", "start" ]
